@@ -2,7 +2,6 @@
 
 ![](https://github.com/afoninsb/Stripe/actions/workflows/stripe_workflow.yml/badge.svg)
 
-
 ## Technology stack
 
 Python 3.10, Django 4.1.6, Stripe 5.1.1
