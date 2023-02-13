@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Список продуктов</title>
+  </head>
+  <body>
+    <section>
+      <form action="/to_order/" method="POST">{% csrf_token %}
+        {% for product in products %}
+          <div class="product">
+            <div class="description">
+              <p>
+                <input type="checkbox" value="{{ product.id }}" name="id">
+                <label>{{ product.name }} - {{ product.get_display_price }}</label>
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+        <button type="submit" id="checkout-button">В корзину</button>
+      </form>
+    </section>
+  </body>
+</html>

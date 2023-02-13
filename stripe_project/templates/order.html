@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Корзина</title>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <section>
+      <form action="/buy/" method="GET">{% csrf_token %}
+        <div class="product">
+          <div class="description">
+            {% for product in order %}
+            <p>{{ product.item }} ({{ product.item.get_display_price }})</p>
+            {% endfor %}
+          </div>
+        </div>
+        <p>Купон: <input maxlength="100" size="20" name="discount"></p>
+        <button type="submit" id="checkout-button" name="button" value="checkout.Session">checkout.Session</button>
+        {% if order.count == 1 %}
+          <button type="submit" id="checkout-button" name="button" value="paymentIntents">paymentIntents</button>
+        {% endif %}
+      </form>
+    </section>
+  </body>
+</html>
