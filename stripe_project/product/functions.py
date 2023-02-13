@@ -1,4 +1,5 @@
 import contextlib
+
 import stripe
 
 from django.db.models import Exists, OuterRef
@@ -9,7 +10,7 @@ from product.models import Discount, Item, Order
 def get_items():
     items = Item.objects.filter(Exists(
         Order.objects.filter(item=OuterRef('id'))
-        )).select_related('tax')
+    )).select_related('tax')
     return (
         [
             {
@@ -64,7 +65,7 @@ def get_tax(tax):
 def get_intent():
     items = Item.objects.filter(Exists(
         Order.objects.filter(item=OuterRef('id'))
-        )).select_related('tax')
+    )).select_related('tax')
     return stripe.PaymentIntent.create(
         amount=items[0].price,
         currency=items[0].currency,

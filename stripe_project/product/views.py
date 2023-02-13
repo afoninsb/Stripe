@@ -124,16 +124,15 @@ class GetSessionIdForOrderView(View):
             return JsonResponse({
                 'id': checkout_session.id
             })
-        else:
-            intent = get_intent()
-            return render(
-                request,
-                'checkout.html',
-                {
-                    'client_secret': intent.client_secret,
-                    'api_key': settings.STRIPE_PUBLIC_KEY,
-                }
-            )
+        intent = get_intent()
+        return render(
+            request,
+            'checkout.html',
+            {
+                'client_secret': intent.client_secret,
+                'api_key': settings.STRIPE_PUBLIC_KEY,
+            }
+        )
 
 
 class SuccessView(TemplateView):
