@@ -13,11 +13,11 @@ SECRET_KEY = os.getenv(
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 
-DOMAIN = "http://127.0.0.1:8000"
+DOMAIN = "http://51.250.96.200"
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ('localhost', '127.0.0.1')
+ALLOWED_HOSTS = ('localhost', '127.0.0.1', '51.250.96.200')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
