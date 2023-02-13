@@ -17,9 +17,7 @@ services:
       start_period: 40s
 
   web:
-    build:
-      context: ../stripe_project
-      dockerfile: Dockerfile
+    image: afoninsb/stripe_back:latest
     restart: unless-stopped
     volumes:
       - static_value:/backend/static/django/
