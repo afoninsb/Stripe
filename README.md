@@ -60,5 +60,3 @@ The following will happen:
   - a superuser will be created
 
 Go to the http://localhost/
-
-
