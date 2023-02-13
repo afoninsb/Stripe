@@ -1,5 +1,6 @@
 # Stripe test case
 
+
 ![](https://github.com/afoninsb/Stripe/actions/workflows/stripe_workflow.yml/badge.svg)
 
 ## Technology stack
